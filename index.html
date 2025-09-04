@@ -1,129 +1,979 @@
-xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Javier Rivas Roncero - Senior ProductManager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier Rivas Roncero | Senior Product Manager & AI Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #06b6d4;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f9f9f9;
+            color: var(--text-dark);
+            background: var(--bg-light);
         }
-        h1, h2, h3 {
-            color: #0056b3;
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
         }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
         }
-        a {
-            color: #0056b3;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
-        section {
-            margin-bottom: 40px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('hero.jpg') center/cover;
+            opacity: 0.1;
         }
-        .contact-info p {
-            margin: 5px 0;
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-left: 2rem;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid var(--bg-white);
+        }
+
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .date-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .portfolio-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .portfolio-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-results {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-value {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">JRR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<header>
-    <h1>Javier Rivas Roncero</h1>
-    <p><strong>Senior Product Manager | Digital Transformation & AI Expert</strong></p>
-    <div class="contact-info">
-        <p>London, UK | +44 7880 040644 | <a href="mailto:javi91r@hotmail.com">javi91r@hotmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/javier-rivas-roncero/" target="_blank">LinkedIn Profile</a></p>
-    </div>
-</header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Javier Rivas Roncero</h1>
+            <div class="hero-subtitle">Senior Product Manager & AI Transformation Expert</div>
+            <div class="hero-description">
+                10+ years driving digital transformation across automotive, telecom, and tech sectors. 
+                Delivering AI-powered products that scale to millions of users globally.
+            </div>
+            <a href="#portfolio" class="cta-button">View My Work</a>
+        </div>
+    </section>
 
-<section>
-    <h2>About Me</h2>
-    <p>Senior Product Manager with 10+ years of experience leading complex global digital transformation projects across the automotive, telecom, and tech sectors. Proven track record delivering AI-powered products, scaling platforms, and managing cross-functional agile teams. Strong focus on customer-centric innovation and data-driven strategies.</p>
-</section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="section-subtitle">
+                Transforming businesses through strategic product leadership and cutting-edge AI solutions
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Senior Product Manager with over 10 years of experience leading complex, global digital transformations across the automotive, telecom, and tech sectors. I specialize in delivering AI-powered products, scaling platforms, and managing cross-functional teams in agile environments.</p>
+                    
+                    <p>My expertise spans from strategic product vision to hands-on technical implementation, with a proven track record of driving customer-centric innovation, data-driven strategy, and end-to-end lifecycle ownership across 72+ international markets.</p>
+                    
+                    <p>Currently at Nissan Corporation, I lead AI initiatives that have transformed digital customer experiences, achieving 35% year-over-year user growth and 20% conversion rate improvements through personalized, intelligent solutions.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">72+</div>
+                        <div class="stat-label">Global Markets</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">User Growth YoY</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$1.8M+</div>
+                        <div class="stat-label">Budgets Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Professional Experience</h2>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="section-subtitle">
+                Leading digital transformation initiatives across industry-leading organizations
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Senior AI Digital Product Manager</div>
+                        <div class="company">Nissan Corporation</div>
+                        <div class="date-location">London, UK | January 2023 – Present</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Executed comprehensive global digital strategy leveraging AI, ML, and advanced analytics across 72 markets, achieving 35% YoY user growth</li>
+                        <li>Led deployment of AI-powered car configurators with real-time recommendation engines, resulting in 20% conversion rate improvement</li>
+                        <li>Directed integration of diverse data sources into unified data lakes using AWS/Azure, enhancing real-time decision-making capabilities</li>
+                        <li>Spearheaded innovative AI solutions including predictive maintenance algorithms and intelligent virtual assistants, reducing customer churn by 25%</li>
+                        <li>Managed global cross-functional teams using Agile methodologies, reducing go-to-market time by 30%</li>
+                        <li>Forged strategic partnerships with Google Cloud, AWS, Salesforce, and Microsoft for scalable AI-driven solutions</li>
+                    </ul>
+                </div>
 
-    <h3>Senior AI Digital Product Manager</h3>
-    <p><em>Nissan Corporation | London, UK | Jan 2023 – Present</em></p>
-    <ul>
-        <li>Executed a global digital transformation strategy leveraging AI, machine learning, and advanced analytics, increasing Daily and Monthly Active Users by 35% year-over-year across 72 markets.</li>
-        <li>Led deployment of AI-powered car configurators with real-time recommendation engines and NLP customer support, boosting conversion rates by 20%.</li>
-        <li>Directed integration of diverse data sources into unified data lakes, improving data accuracy and real-time decision capabilities using AWS and Azure.</li>
-        <li>Spearheaded AI solutions like predictive maintenance algorithms and intelligent virtual assistants, reducing customer churn by 25%.</li>
-        <li>Managed cross-functional global agile teams and strategic partnerships with Google Cloud, AWS, Salesforce, and Microsoft.</li>
-    </ul>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Product Integration Manager</div>
+                        <div class="company">Vodafone Group</div>
+                        <div class="date-location">London, UK | September 2019 – December 2022</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Directed end-to-end integration projects with Amazon, Google, Apple, and Samsung across international markets</li>
+                        <li>Spearheaded OneNumber project enabling seamless device connectivity without Wi-Fi proximity requirements</li>
+                        <li>Championed operational efficiency initiatives, achieving 15% reduction in product launch timelines</li>
+                        <li>Developed dynamic KPI dashboards using Tableau and Power BI for real-time stakeholder insights</li>
+                    </ul>
+                </div>
 
-    <h3>Product Integration Manager</h3>
-    <p><em>Vodafone Group | London, UK | Sept 2019 – Dec 2022</em></p>
-    <ul>
-        <li>Directed end-to-end technology integration projects with Amazon, Google, Apple, and Samsung across international markets.</li>
-        <li>Led the OneNumber initiative enabling seamless data sharing across devices without Wi-Fi or phone proximity.</li>
-        <li>Optimized product launch processes, reducing timelines by 15% and enhancing operational efficiency.</li>
-    </ul>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Product Manager</div>
+                        <div class="company">Hewlett Packard Enterprise</div>
+                        <div class="date-location">Düsseldorf, Germany | November 2016 – September 2019</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Directed agile delivery of complex Telco software using Kubernetes, Docker, and DevOps methodologies</li>
+                        <li>Delivered 12% operational cost reduction through strategic planning and lean project management</li>
+                        <li>Led modernization of legacy systems to scalable microservices architectures</li>
+                        <li>Championed customer-focused innovation projects, driving significant CX improvements</li>
+                    </ul>
+                </div>
 
-    <h3>Product Manager</h3>
-    <p><em>Hewlett Packard Enterprise | Düsseldorf, Germany | Nov 2016 – Sept 2019</em></p>
-    <ul>
-        <li>Accelerated Telco software delivery using cloud-native, Kubernetes, Docker, and DevOps methodologies.</li>
-        <li>Reduced operational costs by 12% via lean project management and strategic resource optimization.</li>
-        <li>Led modernization of legacy systems to scalable microservices architectures to improve adaptability and performance.</li>
-    </ul>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Project Manager – Integrations & Software Sales</div>
+                        <div class="company">IBM</div>
+                        <div class="date-location">Madrid, Spain | September 2014 – September 2016</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Spearheaded Watson AI-driven automation for global banks, achieving 10% operational cost reduction</li>
+                        <li>Partnered with financial institutions to deliver scalable, AI-enhanced digital solutions</li>
+                        <li>Utilized Watson-powered analytics to drive 12% ROI increase through data-informed roadmaps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>Project Manager – Integrations & Software Sales</h3>
-    <p><em>IBM | Madrid, Spain | Sept 2014 – Sept 2016</em></p>
-    <ul>
-        <li>Led AI-driven automation and API projects with IBM Watson for global banks, reducing operating costs by 10%.</li>
-        <li>Delivered AI-enhanced digital solutions for banks, increasing client ROI by 12%.</li>
-    </ul>
-</section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="section-subtitle">
+                Key solutions delivered across automotive, telecommunications, fintech, and enterprise IT
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Global Car Configurator Platform</h3>
+                        <div class="portfolio-meta">
+                            <span>Nissan (2023-2024)</span>
+                            <span>Budget: $1.8M</span>
+                        </div>
+                        <p class="portfolio-description">
+                            Centralized configurator systems for 55+ countries with 3D rendering and real-time stock accuracy.
+                        </p>
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span>Go-to-market time reduction</span>
+                                <span class="result-value">-40%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Online conversion increase</span>
+                                <span class="result-value">+22%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section>
-    <h2>Education & Certifications</h2>
-    <ul>
-        <li>Bachelor’s & Master’s Degree in Telecommunications Engineering – Universidad Carlos III de Madrid</li>
-        <li>SAFe® 6.0 Certified Product Owner/Product Manager (POPM) – June 2024</li>
-        <li>AI Business Value Certification – Multiverse Platform</li>
-    </ul>
-</section>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">AI-Powered EIM Lookup Automation</h3>
+                        <div class="portfolio-meta">
+                            <span>Nissan (2024)</span>
+                            <span>Digital Transformation</span>
+                        </div>
+                        <p class="portfolio-description">
+                            AI pipeline for automating 10,000+ Equipment Item Master lookups using NLU.
+                        </p>
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span>Manual effort reduction</span>
+                                <span class="result-value">-70%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Data accuracy improvement</span>
+                                <span class="result-value">95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section>
-    <h2>Skills & Languages</h2>
-    <ul>
-        <li>Product Strategy & Vision, Roadmap Planning, Agile & Scrum Methodologies</li>
-        <li>AI & Machine Learning Integration, Data-driven Decision Making</li>
-        <li>Cross-functional Team Leadership & Collaboration</li>
-        <li>Scalable Platforms & API Integration, Digital Transformation Delivery</li>
-        <li>Languages: Spanish (Native), English (Professional proficiency)</li>
-    </ul>
-</section>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Digital Twin Initiative</h3>
+                        <div class="portfolio-meta">
+                            <span>Vodafone (2021-2022)</span>
+                            <span>AI & Automation</span>
+                        </div>
+                        <p class="portfolio-description">
+                            Real-time digital twin with ML-based anomaly detection for predictive maintenance.
+                        </p>
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span>Network downtime reduction</span>
+                                <span class="result-value">-37%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Fault prediction accuracy</span>
+                                <span class="result-value">87%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section>
-    <h2>Contact</h2>
-    <p>Feel free to reach out for collaboration or inquiries:</p>
-    <p>Email: <a href="mailto:javi91r@hotmail.com">javi91r@hotmail.com</a></p>
-</section>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Enterprise Product Enablement</h3>
+                        <div class="portfolio-meta">
+                            <span>HPE (2017-2018)</span>
+                            <span>Product Strategy</span>
+                        </div>
+                        <p class="portfolio-description">
+                            Global playbook for hybrid cloud suite adoption across EMEA and APAC markets.
+                        </p>
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span>Onboarding efficiency</span>
+                                <span class="result-value">+55%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Certification rates</span>
+                                <span class="result-value">+300%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">PIM Transformation</h3>
+                        <div class="portfolio-meta">
+                            <span>Renault/Nissan Alliance</span>
+                            <span>Product Governance</span>
+                        </div>
+                        <p class="portfolio-description">
+                            Cost-effective PIM framework transition across 25+ markets with centralized control.
+                        </p>
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span>Annual cost savings</span>
+                                <span class="result-value">€500K</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Markets covered</span>
+                                <span class="result-value">25+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Customer Data Platform</h3>
+                        <div class="portfolio-meta">
+                            <span>Vodafone (2020)</span>
+                            <span>Data Product Owner</span>
+                        </div>
+                        <p class="portfolio-description">
+                            Adobe Experience Platform integration for behavioral segmentation and GDPR compliance.
+                        </p>
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span>Campaign engagement</span>
+                                <span class="result-value">+32%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Churn reduction</span>
+                                <span class="result-value">-19%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="section-subtitle">
+                Comprehensive skill set spanning strategic leadership, technical implementation, and team management
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-lightbulb"></i> Product Strategy & Vision</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Strategic Product Leadership</span>
+                        <span class="skill-tag">Roadmap Planning</span>
+                        <span class="skill-tag">Go-to-Market Strategy</span>
+                        <span class="skill-tag">Business Model Design</span>
+                        <span class="skill-tag">Customer Experience Strategy</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Data & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data-Driven Decision Making</span>
+                        <span class="skill-tag">Market Research & Analysis</span>
+                        <span class="skill-tag">Customer Insights & VOC</span>
+                        <span class="skill-tag">OKRs & KPI Execution</span>
+                        <span class="skill-tag">Competitive Benchmarking</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-rocket"></i> Execution & Delivery</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile & Scrum Methodologies</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Cross-Functional Collaboration</span>
+                        <span class="skill-tag">Digital Transformation</span>
+                        <span class="skill-tag">Risk Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI & Technology</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AI Integration</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Cloud Platforms (AWS, Azure)</span>
+                        <span class="skill-tag">Data Governance</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-users-cog"></i> Leadership & Communication</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">Change Management</span>
+                        <span class="skill-tag">Budget Ownership</span>
+                        <span class="skill-tag">Negotiation & Influence</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-globe"></i> Languages & Certifications</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spanish (Native)</span>
+                        <span class="skill-tag">English (Professional)</span>
+                        <span class="skill-tag">SAFe® 6.0 POPM Certified</span>
+                        <span class="skill-tag">AI Business Value Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-subtitle">
+                Ready to discuss your next digital transformation challenge?
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem; color: var(--primary-color);">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Location</strong><br>
+                            London, United Kingdom
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +44 7880 040644
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:javi91r@hotmail.com">javi91r@hotmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            <a href="https://www.linkedin.com/in/javier-rivas-roncero/" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem; color: var(--primary-color);">Education</h3>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <strong>Bachelor's & Master's Degree</strong><br>
+                        <span style="color: var(--text-light);">Telecommunications Engineering</span><br>
+                        <small>Universidad Carlos III de Madrid, Spain (2009-2014)</small>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <strong>SAFe® 6.0 Certified POPM</strong><br>
+                        <span style="color: var(--text-light);">Scaled Agile, Inc.</span><br>
+                        <small>Certified June 2024</small>
+                    </div>
+
+                    <div>
+                        <strong>AI Business Value Certification</strong><br>
+                        <span style="color: var(--text-light);">Multiverse Platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Javier Rivas Roncero. All rights reserved. | Senior Product Manager & AI Expert</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
 </body>
-
 </html>
